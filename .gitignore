@@ -1,0 +1,25 @@
+# Python virtual environment and caching
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local data files and system logs (dynamically generated)
+data/sensor_data.csv
+data/alerts.csv
+data/pump_history.csv
+data/daily_summary.csv
+data/system_health.json
+outputs/*.txt
+outputs/*.log
+
+# PlatformIO build artifacts and IDE folders
+firmware/.pio/
+firmware/.cache/
+firmware/.vscode/
+firmware/compile_commands.json
+
+# General OS files
+.DS_Store
+Thumbs.db
