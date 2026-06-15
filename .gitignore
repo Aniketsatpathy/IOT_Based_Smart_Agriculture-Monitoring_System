@@ -15,10 +15,10 @@ outputs/*.txt
 outputs/*.log
 
 # PlatformIO build artifacts and IDE folders
-firmware/.pio/
-firmware/.cache/
-firmware/.vscode/
-firmware/compile_commands.json
+.pio/
+.cache/
+.vscode/
+compile_commands.json
 
 # General OS files
 .DS_Store

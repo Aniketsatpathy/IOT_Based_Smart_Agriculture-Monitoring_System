@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Aniket Satpathy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 76.8, "left": 110.44, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -134.1, "left": 119.4, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -105.4, "left": 355.2, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 133.1, "left": -134.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 152.3, "left": 374.2, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -83.2,
+      "left": -200.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -140,
+      "left": 200,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "h-48", "v105.6" ] ],
+    [ "dht1:SDA", "esp:4", "green", [ "v19.2", "h86.5", "v201.6" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0", "h105.6", "v105.6" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v28.8", "h76", "v-124.8" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v67.2", "h124.8", "v-38.4" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "v48", "h105.2", "v-105.6" ] ],
+    [ "pot2:GND", "esp:GND.3", "black", [ "v28.8", "h-57.6", "v-86.4" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "v28.8", "h66.4", "v-192", "h-364.8", "v48" ] ],
+    [ "pot2:SIG", "esp:32", "green", [ "v86.4", "h-298", "v-144" ] ],
+    [ "relay1:VCC", "esp:5V", "red", [ "h-19.2", "v278.4", "h-9.6" ] ],
+    [ "relay1:GND", "esp:GND.3", "black", [ "h-19.2", "v-0.4" ] ],
+    [
+      "relay1:IN",
+      "esp:26",
+      "green",
+      [ "h-9.6", "v95.8", "h172.8", "v297.6", "h-364.8", "v-134.4" ]
+    ],
+    [ "ldr1:VCC", "esp:3V3", "red", [ "h57.6", "v163.2", "h-9.6" ] ],
+    [
+      "ldr1:GND",
+      "esp:GND.1",
+      "black",
+      [ "h28.8", "v57.2", "h-163.2", "v259.2", "h201.6", "v-38.4" ]
+    ],
+    [ "ldr1:AO", "esp:35", "green", [ "h9.6", "v181.7" ] ],
+    [ "r1:1", "dht1:VCC", "red", [ "h0" ] ],
+    [ "r1:2", "dht1:SDA", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
